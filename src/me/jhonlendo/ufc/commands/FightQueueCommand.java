@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import me.jhonlendo.ufc.UFC;
 import me.jhonlendo.ufc.events.FightStartEvent;
+import me.jhonlendo.ufc.statics.ConfigParam;
 
 public class FightQueueCommand implements CommandExecutor, Listener {
 
@@ -30,7 +31,19 @@ public class FightQueueCommand implements CommandExecutor, Listener {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (sender instanceof Player) {
            Player p = (Player)sender;
-           // Double-Checking
+			if (ConfigParam.UFCSpawnOne == null) {
+				p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+				return true;
+			}
+			if (ConfigParam.UFCSpawnTwo == null) {
+				p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+				return true;
+			}
+			if (ConfigParam.UFCFallBack == null) {
+				p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+				return true;
+			}
+	           // Double-Checking
            if (!this.ufc.getFightManager().isFighting(p.getUniqueId())) {
         	   if (queue.contains(p.getUniqueId())) {
         		   queue.remove(p.getUniqueId());

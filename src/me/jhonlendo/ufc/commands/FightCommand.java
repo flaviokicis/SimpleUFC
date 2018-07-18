@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import me.jhonlendo.ufc.UFC;
+import me.jhonlendo.ufc.statics.ConfigParam;
 
 public class FightCommand implements CommandExecutor {
 
@@ -26,6 +27,18 @@ public class FightCommand implements CommandExecutor {
 				p.sendMessage("§cPlease, insert a valid player name.");
 			} else {
 				// Double-Checking
+				if (ConfigParam.UFCSpawnOne == null) {
+					p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+					return true;
+				}
+				if (ConfigParam.UFCSpawnTwo == null) {
+					p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+					return true;
+				}
+				if (ConfigParam.UFCFallBack == null) {
+					p.sendMessage("§cSorry, the locations haven't been fully set yet.");
+					return true;
+				}
 				if (this.ufc.getFightManager().isFighting(p.getUniqueId())) {
 					return true;
 				}

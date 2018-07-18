@@ -26,12 +26,12 @@ public class UFC extends JavaPlugin {
 	public void onEnable() {
 		long enable = System.currentTimeMillis();
 		this.console = getServer().getConsoleSender();
-		this.registerCommands();
 		this.saveDefaultConfig();
 		this.setStatics();
 		this.storageManager = new StorageManager(this);
 		this.fightManager = new FightManager();
 		getServer().getPluginManager().registerEvents(fightManager, this);
+		this.registerCommands();
 		InvSetup.setupItems();
 		long past = System.currentTimeMillis() - enable;
 		this.console.sendMessage("§aUFC enabled in " + past + "ms (" + (past / 1000) + "sec).");
@@ -63,18 +63,24 @@ public class UFC extends JavaPlugin {
 		ConfigParam.win = getConfig().getString("win").replaceAll("&", "§");
 		ConfigParam.interrupted = getConfig().getString("interrupted").replaceAll("&", "§");
 		// Setup Locations
+		if (getConfig().getString("Locations.SpawnONE.world") != null) {
 		Location UFCSpawnOne = new Location(getWorld("SpawnONE"), getInt("SpawnONE.x") + 0.5, getInt("SpawnONE.y") + 0.5, getInt("SpawnONE.z") + 0.5);
 		UFCSpawnOne.setPitch(getLong("SpawnONE.pitch"));
 		UFCSpawnOne.setYaw(getLong("SpawnONE.yaw"));
+		ConfigParam.UFCSpawnOne = UFCSpawnOne;
+		}
+		if (getConfig().getString("Locations.SpawnTWO.world") != null) {
 		Location UFCSpawnTwo = new Location(getWorld("SpawnTWO"), getInt("SpawnTWO.x") + 0.5, getInt("SpawnTWO.y") + 0.5, getInt("SpawnTWO.z") + 0.5);
 		UFCSpawnTwo.setPitch(getLong("SpawnTWO.pitch"));
 		UFCSpawnTwo.setYaw(getLong("SpawnTWO.yaw"));
+		ConfigParam.UFCSpawnTwo = UFCSpawnTwo;
+		}
+		if (getConfig().getString("Locations.FallBack.world") != null) {
 		Location UFCFallBack = new Location(getWorld("FallBack"), getInt("FallBack.x") + 0.5, getInt("FallBack.y") + 0.5, getInt("FallBack.z") + 0.5);
 		UFCFallBack.setPitch(getLong("FallBack.pitch"));
 		UFCFallBack.setYaw(getLong("FallBack.yaw"));
-		ConfigParam.UFCSpawnOne = UFCSpawnOne;
-		ConfigParam.UFCSpawnTwo = UFCSpawnTwo;
 		ConfigParam.UFCFallBack = UFCFallBack;
+		}
 	}
 
 	public StorageManager getStorageManager() {

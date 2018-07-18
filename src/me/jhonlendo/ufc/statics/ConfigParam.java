@@ -18,7 +18,7 @@ public class ConfigParam {
 	
 	public static boolean blockAllCommands = true;
 	
-	public static String tookTooLong = "§cYou took to long to finish the battle. That's a draw.";
+	public static String tookTooLong = "§cYou took too long to finish the battle. That's a draw.";
 	
 	public static String teleportedAwayOther = "§aYour opponent was teleported away from the battle. You win.";
 	
