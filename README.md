@@ -1,7 +1,7 @@
 # SimpleUFC
 Just my simple ufc project. Made in a day.
 
-/fight <player> - Challenge a player. If you have been challenged, just type /fight <whoChallengedYou> to accept the match.
+/fight <player> - Challenge a player. If you have been challenged, just type /fight whoChallengedYou to accept the match.
 /fightqueue - Enters the queue. You may fight with someone totally random.
 /ufc - Admin commands:
 /ufc setspawn [ONE/TWO] - Set spawn location for player ONE or TWO.
