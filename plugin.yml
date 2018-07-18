@@ -1,0 +1,8 @@
+name: SimpleUFC
+main: me.jhonlendo.ufc.UFC
+author: Prisma
+version: 0.01a
+commands:
+  uhc:
+  fight:
+  fightqueue:

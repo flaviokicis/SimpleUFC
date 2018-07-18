@@ -1,0 +1,27 @@
+## Welcome, this is the UFC config.
+## All the '&'s will be replaced by the their respective colours
+
+
+# Message sent when the user has no permission for the command
+permission-denied-message: '&cSorry, you do not have permission to execute this command.'
+# The required permission
+permission-node: ufc.command.admin
+# Limit of time (in seconds) that an arena/fight can stay active. When the timer runs out, the players will be teleported back
+# and it'll be counted as a draw. If the time is less than 10, there's no limit of time (not recommended).
+TimeLimit: 0
+# If this is set to true, the players cannot execute any command during the fight.
+BlockAllCommands: true
+# Message sent when the arena/fight has reached its limit (if there is one)
+TookTooLong: '&cYou took to long to finish the battle. That's a draw.'
+# When the opponent was teleported for some reason
+TeleportedAwayOther: '&aYour opponent was teleported away from the battle. You win.'
+# When YOU have been teleported away for some reason
+TeleportedAwaySelf: '&cYou were teleported away from the battle. You lose.'
+# When the opponent has disconnected or kicked
+DisconnectedOpponent: '&cYour opponent has disconnected! You win!'
+# When YOU die/lose
+loss: '&cYou lose!'
+# When YOU win
+win: '&aYou win!'
+# When the command '/ufc stopall' has been executed
+interrupted: '&cAn admin has stopped all battles!'
