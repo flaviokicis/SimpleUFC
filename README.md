@@ -1,5 +1,5 @@
 # SimpleUFC
-Just my simple ufc project. Made in a day.
+Just my simple ufc project. Made in a couple of minutes.
 
 /fight [player] - Challenge a player. If you have been challenged, just type /fight [whoChallengedYou] to accept the match.
 /fightqueue - Enters the queue. You may fight with someone totally random.
